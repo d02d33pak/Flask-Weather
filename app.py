@@ -5,13 +5,17 @@ Author: Deepak Talan
 Github: @d02d33pak
 """
 
+import os
+
 import requests
 from flask import Flask, flash, redirect, render_template, request, url_for
 
-from config import API_KEY
+from dotenv import load_dotenv
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+
+load_dotenv()
 
 app.config["SECRET_KEY"] = "5791628bb0b13ce0c676dfde280ba245"
 
@@ -33,7 +37,7 @@ def get_city_weather(city):
     params = {
         "q": city,
         "units": "metric",
-        "appid": API_KEY,
+        "appid": os.getenv("API_KEY"),
     }
     return requests.get(url, params=params).json()
 
@@ -90,4 +94,4 @@ def delete(city):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
