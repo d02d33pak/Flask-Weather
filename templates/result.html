@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+
+{% block content %}
+{% for weather in all_weather %}
+<div class="columns is-centered">
+    <div class="column is-5">
+        <div class="box">
+            <article class="media">
+                <figure class="media-left">
+                    <p class="image is-64x64">
+                        <img src="https://openweathermap.org/img/w/{{ weather.icon }}.png">
+                    </p>
+                </figure>
+                <div class="media-content">
+                    <div class="content">
+                        <span class="is-size-3">{{ weather.city }}</span>
+                        <br>
+                        <span class="is-size-5">{{ weather.temp }}&#176 C</span>
+                        <span class="is-size-5 has-text-grey-light ml-4">{{ weather.desc }}</span>
+                    </div>
+                </div>
+                <div class="media-right">
+                    <a href="{{ url_for('delete', city=weather.city)}}">
+                        <button class="delete is-small"></button>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
