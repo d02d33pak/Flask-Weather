@@ -68,6 +68,7 @@ def home_post():
         city_exist = City.query.filter_by(name=new_city).first()
         if not city_exist:
             city_data = get_city_weather(new_city)
+            print(city_data["cod"])
             if city_data["cod"] == 200:
                 city_obj = City(name=city_data["name"])
                 db.session.add(city_obj)
