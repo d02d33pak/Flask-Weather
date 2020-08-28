@@ -1,6 +1,18 @@
 ## Flask Weather WebApp
 
-Built using _OpenWeather_ API
+My _first_ Flask app  
+Built using **_OpenWeather_** API    
+Hosted on **_Heroku_**
 
+[Live version of the app](flask-weather-web-app.heroku.com)
 
-![HomePage](weather.png)
+You can _Add Muliple Cities, Delete Cities, see their Currnet Weather_
+
+![HomePage](weather.gif)
+
+requirements.txt    
+* Flask
+* requests
+* Flask-SQLAlchemy
+* python-dotenv
+* gunicorn [for hosting on heroku]

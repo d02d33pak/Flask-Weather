@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Flask Weather</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
 </head>
 
@@ -36,7 +37,6 @@
             {% for category, message in messages %}
             <div class="columns is-centered">
                 <div class="column is-4 notification is-{{category}}">
-                    <button class="delete is-small"></button>
                     {{ message }}
                 </div>
             </div>
