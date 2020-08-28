@@ -4,7 +4,7 @@ My _first_ Flask app
 Built using **_OpenWeather_** API    
 Hosted on **_Heroku_**
 
-[Live version of the app](flask-weather-web-app.heroku.com)
+[Live version of the app](https://flask-weather-web-app.herokuapp.com)
 
 You can _Add Muliple Cities, Delete Cities, see their Currnet Weather_
 
